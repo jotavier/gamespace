@@ -4,8 +4,8 @@ import androidx.recyclerview.widget.DiffUtil
 import com.picpay.desafio.android.User
 
 class UserListDiffCallback(
-    private val oldList: List<User>,
-    private val newList: List<User>
+    private val oldList: List<com.picpay.desafio.android.User>,
+    private val newList: List<com.picpay.desafio.android.User>
 ) : DiffUtil.Callback() {
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {

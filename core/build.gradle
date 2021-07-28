@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    api project(":resources")
+
+    // Android Defaults
+    api "androidx.appcompat:appcompat:$appcompat_version"
+    api "androidx.core:core-ktx:$core_ktx_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Koin
+    api "org.koin:koin-core:$koin_version"
+    api "org.koin:koin-android:$koin_version"
+    api "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    // Rx
+    api "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
+    api "io.reactivex.rxjava3:rxkotlin:$rxkotlin_version"
+
+    // Services Defaults
+    api 'com.google.code.gson:gson:2.8.6'
+
+    // Unit Tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    implementation "org.koin:koin-test:$koin_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
+
+    // Instrumentation Tests
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+}
