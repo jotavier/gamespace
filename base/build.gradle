@@ -26,16 +26,33 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
 dependencies {
+
+    implementation project(":core")
+
+    // Layout
     api "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
     api "com.google.android.material:material:$material_version"
+
+    // Lifecycle
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    // Picasso
     api "com.squareup.picasso:picasso:$picasso_version"
+
+    // Custom View
     api "de.hdodenhof:circleimageview:$circleimageview_version"
+    
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 }

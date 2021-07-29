@@ -6,8 +6,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class UserDto(
-    @SerializedName("img") val img: String,
+    @SerializedName("id") val id: Long,
     @SerializedName("name") val name: String,
-    @SerializedName("id") val id: Int,
+    @SerializedName("img") val img: String,
     @SerializedName("username") val username: String
 ) : Parcelable

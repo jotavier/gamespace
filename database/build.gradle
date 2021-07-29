@@ -32,5 +32,6 @@ android {
 }
 
 dependencies {
+    implementation project(":core")
     api "android.arch.persistence.room:rxjava2:$rxroom_version"
 }

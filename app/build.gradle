@@ -49,5 +49,5 @@ dependencies {
     implementation project(":resources")
 
     // Feature Modules
-    implementation project(":main")
+    implementation project(':main')
 }

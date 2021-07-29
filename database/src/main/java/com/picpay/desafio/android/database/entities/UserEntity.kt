@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.main.data.entities
+package com.picpay.desafio.android.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 )
 data class UserEntity(
     @PrimaryKey
-    private var id: Long = 0,
+    val id: Long,
     @ColumnInfo(name = "image")
     val img: String,
     val name: String,

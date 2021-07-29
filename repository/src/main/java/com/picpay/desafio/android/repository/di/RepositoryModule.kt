@@ -1,3 +1,8 @@
 package com.picpay.desafio.android.repository.di
 
-val repositoryModules = {}
+import com.picpay.desafio.android.repository.service.retrofit.RetrofitProvider
+import org.koin.dsl.module
+
+val repositoryModules = module {
+    single { RetrofitProvider.instance }
+}

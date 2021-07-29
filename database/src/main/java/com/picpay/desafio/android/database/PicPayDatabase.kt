@@ -3,6 +3,7 @@ package com.picpay.desafio.android.database
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.picpay.desafio.android.database.daos.UserDao
 import com.picpay.desafio.android.database.source.Migrations
 
 abstract class PicPayDatabase : RoomDatabase() {
@@ -24,5 +25,5 @@ abstract class PicPayDatabase : RoomDatabase() {
         }
     }
 
-    abstract fun userDao()
+    abstract fun userDao(): UserDao
 }
