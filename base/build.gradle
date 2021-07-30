@@ -51,8 +51,8 @@ dependencies {
 
     // Custom View
     api "de.hdodenhof:circleimageview:$circleimageview_version"
-    
+
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }

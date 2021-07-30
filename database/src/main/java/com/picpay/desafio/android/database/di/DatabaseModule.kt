@@ -5,6 +5,5 @@ import org.koin.dsl.module
 
 val databaseModules = module {
     single { PicPayDatabase.getInstance(get()) }
-
     single { get<PicPayDatabase>().userDao() }
 }

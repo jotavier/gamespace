@@ -1,5 +1,8 @@
 package com.picpay.desafio.android.main.presentation.ui.main.adapters.viewholders
 
+import com.picpay.desafio.android.base.extensions.hide
+import com.picpay.desafio.android.base.extensions.loadFromUrl
+import com.picpay.desafio.android.base.extensions.show
 import com.picpay.desafio.android.base.viewholder.BaseViewHolder
 import com.picpay.desafio.android.main.R
 import com.picpay.desafio.android.main.databinding.AdapterUserListItemBinding

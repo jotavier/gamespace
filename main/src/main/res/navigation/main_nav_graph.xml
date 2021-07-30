@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.picpay.desafio.android.main.presentation.ui.main.fragments.MainFragment"
-        android:label="@string/title"
+        android:label="@string/main_user_list_title"
         tools:layout="@layout/fragment_main" />
 </navigation>

@@ -3,6 +3,7 @@ package com.picpay.desafio.android.repository.service.retrofit
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitProvider {
@@ -18,6 +19,7 @@ object RetrofitProvider {
             .baseUrl(BASE_URL)
             .client(okHttp)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
 }

@@ -14,16 +14,14 @@ import com.picpay.desafio.android.main.presentation.dataui.UserDataUi
 import com.picpay.desafio.android.main.presentation.ui.main.adapters.UserListAdapter
 import com.picpay.desafio.android.main.presentation.ui.main.viewmodels.MainViewModel
 import com.picpay.desafio.android.main.presentation.ui.main.viewmodels.viewstates.UsersRequestViewState
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : BaseFragment() {
 
-
     private var _binding: FragmentMainBinding? = null
     private val binding: FragmentMainBinding by lazy { _binding!! }
 
-    private val userListAdapter by inject<UserListAdapter>()
+    private val userListAdapter by lazy { UserListAdapter() }
     private val mainViewModel by viewModel<MainViewModel>()
 
     override fun onCreateView(
@@ -44,9 +42,11 @@ class MainFragment : BaseFragment() {
     private fun listenToUsersRequestViewState() {
         mainViewModel.usersRequestViewState.observe(viewLifecycleOwner) { viewState ->
             when (viewState) {
-                is UsersRequestViewState.Error -> makeToast(
-                    getString(R.string.default_request_error_message)
-                )
+                is UsersRequestViewState.Error -> binding.run {
+                    makeToast(getString(R.string.default_request_error_message))
+                    progressBar.hide()
+                    users.show()
+                }
                 is UsersRequestViewState.Loading -> binding.run {
                     progressBar.show()
                     users.hide()
@@ -63,5 +63,10 @@ class MainFragment : BaseFragment() {
 
     private fun setupViewModelAsLifecyclerObserver() {
         lifecycle.addObserver(mainViewModel)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

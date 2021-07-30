@@ -37,13 +37,10 @@ dependencies {
 
     // Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
-    api "com.squareup.retrofit2:adapter-rxjava3:$rxretrofit_version"
-    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxretrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     // OkHttp
-    api "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     api "com.squareup.okhttp3:mockwebserver:$okhttp_version"
-
-    // Shimmer
-    api 'com.facebook.shimmer:shimmer:0.5.0'
 }
