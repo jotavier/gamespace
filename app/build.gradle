@@ -44,10 +44,9 @@ dependencies {
     implementation project(":core")
     implementation project(":base")
     implementation project(":database")
-    implementation project(":interactor")
     implementation project(":repository")
     implementation project(":resources")
 
     // Feature Modules
-    implementation project(':main')
+    implementation project(':feature:home')
 }
