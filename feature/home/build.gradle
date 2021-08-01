@@ -41,8 +41,6 @@ android {
 dependencies {
     implementation project(":core")
     implementation project(":base")
-    implementation project(":repository")
-    implementation project(":database")
 
     kapt "com.google.dagger:dagger-compiler:$dagger_compiler_version"
 

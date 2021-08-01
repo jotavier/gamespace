@@ -1,13 +1,21 @@
 package com.picpay.desafio.android.database.di
 
-import com.picpay.desafio.android.core.abstractions.inject.KoinModule
+import android.content.Context
+import com.picpay.desafio.android.core.di.ApplicationContext
 import com.picpay.desafio.android.database.PicPayDatabase
-import org.koin.core.module.Module
-import org.koin.dsl.module
+import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
-object DatabaseModule : KoinModule {
-    override fun init(): Module = module {
-        single { PicPayDatabase.getInstance(get()) }
-        single { get<PicPayDatabase>().userDao() }
-    }
+@Module(
+    includes = [
+        DaoModule::class
+    ]
+)
+abstract class DatabaseModule {
+    @Singleton
+    @Provides
+    fun providesPicPayDatabase(
+        @ApplicationContext applicationContext: Context
+    ): PicPayDatabase = PicPayDatabase.getInstance(applicationContext)
 }

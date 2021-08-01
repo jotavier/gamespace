@@ -7,3 +7,5 @@ fun Fragment.makeToast(message: String, toastLength: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(requireContext(), message, toastLength)
         .show()
 }
+
+fun Fragment.finish() = activity?.finish()

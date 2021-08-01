@@ -3,7 +3,7 @@
     package="com.picpay.desafio.android.home">
 
     <application android:theme="@style/AppTheme">
-        <activity android:name="com.picpay.desafio.android.home.presentation.ui.main.MainActivity">
+        <activity android:name="com.picpay.desafio.android.home.presentation.ui.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

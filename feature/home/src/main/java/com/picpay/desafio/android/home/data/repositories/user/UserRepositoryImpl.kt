@@ -6,8 +6,10 @@ import com.picpay.desafio.android.home.domain.entities.User
 import com.picpay.desafio.android.home.domain.toDomain
 import com.picpay.desafio.android.home.domain.toEntity
 import io.reactivex.rxjava3.core.Single
+import javax.inject.Inject
 
-class UserRepositoryImpl(
+class UserRepositoryImpl
+@Inject constructor(
     private val userDataSet: UserDataSet,
     private val userDao: UserDao
 ) : UserRepository {

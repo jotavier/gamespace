@@ -38,15 +38,21 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Core Modules
     implementation project(":core")
     implementation project(":base")
     implementation project(":database")
-    implementation project(":repository")
+    implementation project(':api')
     implementation project(":resources")
 
     // Feature Modules
-    implementation project(':feature:home')
+    implementation project(":feature:main")
+    implementation project(":feature:home")
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Dagger
+    kapt "com.google.dagger:dagger-android-processor:$android_dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_compiler_version"
 }
