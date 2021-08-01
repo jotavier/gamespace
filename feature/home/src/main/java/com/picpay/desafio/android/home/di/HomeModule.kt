@@ -12,4 +12,4 @@ import dagger.Module
         PresentationModule::class
     ]
 )
-interface HomeModule
+abstract class HomeModule

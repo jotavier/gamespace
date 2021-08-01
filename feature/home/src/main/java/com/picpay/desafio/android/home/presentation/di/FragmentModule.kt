@@ -5,8 +5,8 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-interface FragmentModule {
+internal abstract class FragmentModule {
 
     @ContributesAndroidInjector
-    fun bindUsersFragment(): UsersFragment
+    abstract fun bindUsersFragment(): UsersFragment
 }

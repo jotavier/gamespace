@@ -24,11 +24,10 @@ class UsersViewModel
             .doOnSubscribe { _usersRequestViewState.value = UsersRequestState.Loading }
             .subscribeBy(
                 onSuccess = { users ->
-                    _usersRequestViewState.value = UsersRequestState.Success(
-                        users.toPresentation()
-                    )
+                    _usersRequestViewState.value = UsersRequestState.Success(users.toPresentation())
                 },
                 onError = { _usersRequestViewState.value = UsersRequestState.Error }
-            ).disposeOnUnsubscribe()
+            )
+            .disposeOnUnsubscribe()
     }
 }

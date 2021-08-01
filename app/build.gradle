@@ -45,6 +45,7 @@ dependencies {
     implementation project(":database")
     implementation project(':api')
     implementation project(":resources")
+    implementation project(":navigation")
 
     // Feature Modules
     implementation project(":feature:main")
@@ -53,6 +54,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Dagger
-    kapt "com.google.dagger:dagger-android-processor:$android_dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_compiler_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 }

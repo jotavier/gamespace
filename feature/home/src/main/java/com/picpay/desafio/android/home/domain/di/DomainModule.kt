@@ -7,4 +7,4 @@ import dagger.Module
         InteractorModule::class
     ]
 )
-internal interface DomainModule
+internal abstract class DomainModule

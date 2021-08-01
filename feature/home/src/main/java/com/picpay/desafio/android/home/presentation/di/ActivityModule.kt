@@ -5,8 +5,8 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-interface ActivityModule {
+internal abstract class ActivityModule {
 
     @ContributesAndroidInjector
-    fun bindHomeActivity(): HomeActivity
+    abstract fun bindHomeActivity(): HomeActivity
 }

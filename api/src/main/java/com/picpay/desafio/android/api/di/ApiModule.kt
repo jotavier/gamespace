@@ -7,9 +7,11 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-interface ApiModule {
+abstract class ApiModule {
 
-    @Singleton
-    @Provides
-    fun providesApiServiceGenerator(): Retrofit = ApiFactory.apiServiceGenerator
+    companion object {
+        @Singleton
+        @Provides
+        fun providesApiServiceGenerator(): Retrofit = ApiFactory.apiServiceGenerator
+    }
 }

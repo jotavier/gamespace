@@ -8,4 +8,4 @@ import dagger.Module
         PresentationModule::class
     ]
 )
-interface MainModule
+abstract class MainModule

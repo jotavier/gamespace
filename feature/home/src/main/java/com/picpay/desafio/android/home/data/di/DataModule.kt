@@ -9,4 +9,4 @@ import dagger.Module
         ServiceModule::class
     ]
 )
-internal interface DataModule
+internal abstract class DataModule

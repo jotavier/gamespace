@@ -16,8 +16,8 @@ import javax.inject.Singleton
 abstract class CoreModule {
 
     companion object {
-        @Provides
         @Singleton
+        @Provides
         fun providesExecutor(): Executor =
             ExecutorImpl(
                 AndroidSchedulers.mainThread(),

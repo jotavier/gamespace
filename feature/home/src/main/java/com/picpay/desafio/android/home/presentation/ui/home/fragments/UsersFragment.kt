@@ -47,23 +47,30 @@ class UsersFragment : BaseFragment() {
     private fun listenToUsersRequestViewState() {
         mainViewModel.usersRequestState.observe(viewLifecycleOwner) { requestState ->
             when (requestState) {
-                is UsersRequestState.Error -> binding.run {
+                is UsersRequestState.Error -> {
                     makeToast(getString(R.string.default_request_error_message))
-                    progressBar.hide()
-                    users.show()
+                    showUsersView()
                 }
-                is UsersRequestState.Loading -> binding.run {
-                    progressBar.show()
-                    users.hide()
-                }
+                is UsersRequestState.Loading -> showLoader()
                 is UsersRequestState.Success -> showLoadedUsers(requestState.users)
             }
         }
     }
 
+    private fun showLoader(): Unit = binding.run {
+        progressBar.show()
+        users.hide()
+    }
+
+    private fun showUsersView(): Unit = binding.run {
+        progressBar.hide()
+        users.show()
+    }
+
     private fun showLoadedUsers(users: List<UserDataUi>) {
         userListAdapter.addUsers(users)
         binding.users.adapter = userListAdapter
+        showUsersView()
     }
 
     private fun setupViewModelAsLifecyclerObserver() {

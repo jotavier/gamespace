@@ -30,3 +30,8 @@ android {
         jvmTarget = '1.8'
     }
 }
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+}

@@ -6,8 +6,8 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-interface DataSetModule {
+internal abstract class DataSetModule {
 
     @Binds
-    fun bindUserDataSet(impl: UserDataSetImpl): UserDataSet
+    abstract fun bindUserDataSet(impl: UserDataSetImpl): UserDataSet
 }

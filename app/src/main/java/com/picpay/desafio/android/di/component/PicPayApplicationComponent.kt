@@ -6,6 +6,7 @@ import com.picpay.desafio.android.core.di.CoreModule
 import com.picpay.desafio.android.database.di.DatabaseModule
 import com.picpay.desafio.android.di.FeaturesModule
 import com.picpay.desafio.android.di.PicPayApplicationModule
+import com.picpay.desafio.android.navigation.di.NavigationModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -19,6 +20,7 @@ import javax.inject.Singleton
         CoreModule::class,
         DatabaseModule::class,
         ApiModule::class,
+        NavigationModule::class,
         FeaturesModule::class
     ]
 )

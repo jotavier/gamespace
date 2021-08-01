@@ -8,10 +8,11 @@ import javax.inject.Singleton
 
 
 @Module
-abstract class ServiceModule {
-
-    @Singleton
-    @Provides
-    fun providesUserApiService(apiServiceGenerator: Retrofit): UserService =
-        apiServiceGenerator.create(UserService::class.java)
+internal abstract class ServiceModule {
+    companion object {
+        @Singleton
+        @Provides
+        fun providesUserApiService(apiServiceGenerator: Retrofit): UserService =
+            apiServiceGenerator.create(UserService::class.java)
+    }
 }

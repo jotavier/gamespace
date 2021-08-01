@@ -13,9 +13,11 @@ import javax.inject.Singleton
     ]
 )
 abstract class DatabaseModule {
-    @Singleton
-    @Provides
-    fun providesPicPayDatabase(
-        @ApplicationContext applicationContext: Context
-    ): PicPayDatabase = PicPayDatabase.getInstance(applicationContext)
+    companion object {
+        @Singleton
+        @Provides
+        fun providesPicPayDatabase(
+            @ApplicationContext applicationContext: Context
+        ): PicPayDatabase = PicPayDatabase.getInstance(applicationContext)
+    }
 }

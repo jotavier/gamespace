@@ -9,4 +9,4 @@ import dagger.Module
         ViewModelModule::class
     ]
 )
-internal interface PresentationModule
+internal abstract class PresentationModule

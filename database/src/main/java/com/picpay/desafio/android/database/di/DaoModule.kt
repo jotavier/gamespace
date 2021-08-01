@@ -6,8 +6,10 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class DaoModule {
-    @Singleton
-    @Provides
-    fun providesUserDao(database: PicPayDatabase) = database.userDao()
+internal abstract class DaoModule {
+    companion object {
+        @Singleton
+        @Provides
+        fun providesUserDao(database: PicPayDatabase) = database.userDao()
+    }
 }

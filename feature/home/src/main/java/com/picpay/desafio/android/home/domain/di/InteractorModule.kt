@@ -6,8 +6,8 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-internal interface InteractorModule {
+internal abstract class InteractorModule {
 
     @Binds
-    fun bindGetUsersInteractor(impl: GetUsersInteractorImpl): GetUsersInteractor
+    abstract fun bindGetUsersInteractor(impl: GetUsersInteractorImpl): GetUsersInteractor
 }

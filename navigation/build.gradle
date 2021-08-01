@@ -36,5 +36,6 @@ dependencies {
     implementation project(":core")
 
     // Features
+    implementation project(":feature:main")
     implementation project(":feature:home")
 }

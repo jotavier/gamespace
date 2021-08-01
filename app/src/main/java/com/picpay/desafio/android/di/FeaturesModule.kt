@@ -10,4 +10,4 @@ import dagger.Module
         HomeModule::class
     ]
 )
-interface FeaturesModule
+abstract class FeaturesModule

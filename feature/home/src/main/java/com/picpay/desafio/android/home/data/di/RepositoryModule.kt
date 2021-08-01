@@ -6,8 +6,8 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-interface RepositoryModule {
+internal abstract class RepositoryModule {
 
     @Binds
-    fun bindUserRepository(impl: UserRepositoryImpl): UserRepository
+    abstract fun bindUserRepository(impl: UserRepositoryImpl): UserRepository
 }

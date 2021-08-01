@@ -10,7 +10,6 @@ import dagger.Provides
 abstract class PicPayApplicationModule {
 
     companion object {
-
         @Provides
         @ApplicationContext
         fun providesApplicationContext(application: PicPayApplication): Context =

@@ -11,5 +11,5 @@ abstract class NavigationModule {
 
     @Singleton
     @Binds
-    abstract fun bindNavigator(impl: NavigatorImpl): Navigator
+    internal abstract fun providesNavigator(impl: NavigatorImpl): Navigator
 }

@@ -11,9 +11,8 @@ buildscript {
         material_version = "1.4.0"
         moshi_version = '1.8.0'
 
-        retrofit_version = '2.7.1'
-        rxretrofit_version = "2.9.0"
-        okhttp_version = '4.3.1'
+        retrofit_version = '2.9.0'
+        okhttp_version = '4.9.0'
         gson_version = "2.8.6"
 
         picasso_version = '2.71828'
@@ -26,9 +25,7 @@ buildscript {
         test_runner_version = '1.4.0'
         espresso_version = '3.4.0'
 
-        dagger_version = "2.35.1"
-        android_dagger_version = "2.10"
-        dagger_compiler_version = "2.28.3"
+        dagger_version = "2.38.1"
 
         lifecycle_version = "2.3.1"
         coroutines_version = "1.3.3"
@@ -36,7 +33,7 @@ buildscript {
         rxandroid_version = "3.0.0"
         core_ktx_test_version = "1.4.0"
 
-        rxroom_version = "1.1.1"
+        room_version = "2.3.0"
         nav_version = "2.3.5"
     }
 
