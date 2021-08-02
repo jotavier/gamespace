@@ -1,12 +1,13 @@
 package com.picpay.desafio.android.home.domain
 
+import com.picpay.desafio.android.core.extensions.EMPTY
 import com.picpay.desafio.android.database.entities.UserEntity
 import com.picpay.desafio.android.home.data.datasets.dtos.UserDto
 import com.picpay.desafio.android.home.domain.entities.User
 
 fun UserDto.toDomain() = User(
     id = id,
-    img = img,
+    img = img ?: String.EMPTY,
     name = name,
     userName = username
 )
@@ -26,7 +27,7 @@ fun List<UserEntity>.toDomain(): List<User> = this.map { userEntity -> userEntit
 
 fun UserDto.toEntity() = UserEntity(
     id = id,
-    img = img,
+    img = img ?: String.EMPTY,
     name = name,
     userName = username
 )

@@ -27,7 +27,7 @@ class UsersFragment : BaseFragment() {
     private val binding: FragmentUsersBinding by lazy { _binding!! }
 
     private val userListAdapter by lazy { UserListAdapter() }
-    private val mainViewModel by viewModels<UsersViewModel> { viewModelFactory }
+    private val usersViewModel by viewModels<UsersViewModel> { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,19 +40,26 @@ class UsersFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupViewModelAsLifecyclerObserver()
-        listenToUsersRequestViewState()
+        usersViewModel.getUsers()
+        listenToUsersRequestState()
     }
 
-    private fun listenToUsersRequestViewState() {
-        mainViewModel.usersRequestState.observe(viewLifecycleOwner) { requestState ->
-            when (requestState) {
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        savedInstanceState?.also {
+
+        }
+    }
+
+    private fun listenToUsersRequestState() {
+        usersViewModel.usersRequestState.observe(viewLifecycleOwner) { requestResult ->
+            when (requestResult) {
                 is UsersRequestState.Error -> {
                     makeToast(getString(R.string.default_request_error_message))
                     showUsersView()
                 }
                 is UsersRequestState.Loading -> showLoader()
-                is UsersRequestState.Success -> showLoadedUsers(requestState.users)
+                is UsersRequestState.Success -> showLoadedUsers(requestResult.users)
             }
         }
     }
@@ -71,10 +78,6 @@ class UsersFragment : BaseFragment() {
         userListAdapter.addUsers(users)
         binding.users.adapter = userListAdapter
         showUsersView()
-    }
-
-    private fun setupViewModelAsLifecyclerObserver() {
-        lifecycle.addObserver(mainViewModel)
     }
 
     override fun onDestroyView() {

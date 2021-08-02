@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.core.Single
 interface UserDao {
 
     @Query("SELECT * FROM users")
-    fun getUsers(): Single<List<UserEntity>>
+    fun getUsers(): Single<List<UserEntity>?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveUsers(users: List<UserEntity>): Completable

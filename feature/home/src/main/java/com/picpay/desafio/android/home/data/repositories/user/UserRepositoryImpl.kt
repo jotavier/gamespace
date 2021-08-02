@@ -21,5 +21,5 @@ class UserRepositoryImpl
 
     override fun getLocalUsers(): Single<List<User>> =
         userDao.getUsers()
-            .map { usersEntities -> usersEntities.toDomain() }
+            .map { usersEntities -> usersEntities?.toDomain() }
 }
