@@ -5,11 +5,10 @@ import com.picpay.desafio.android.home.domain.entities.User
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class GetUsersInteractorImpl @Inject constructor(
+class GetLocalUsersInteractorImpl
+@Inject constructor(
     private val userRepository: UserRepository
-) : GetUsersInteractor {
+) : GetLocalUsersInteractor {
 
-    override fun execute(params: Unit): Single<List<User>> =
-        userRepository.requestUsers()
-            .onErrorResumeNext { userRepository.getLocalUsers() }
+    override fun execute(params: Unit): Single<List<User>> = userRepository.getLocalUsers()
 }

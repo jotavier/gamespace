@@ -4,8 +4,8 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.picpay.desafio.android.home.data.repositories.user.UserRepository
 import com.picpay.desafio.android.home.domain.entities.User
-import com.picpay.desafio.android.home.domain.interactors.users.get.GetUsersInteractor
-import com.picpay.desafio.android.home.domain.interactors.users.get.GetUsersInteractorImpl
+import com.picpay.desafio.android.home.domain.interactors.users.request.RequestUsersInteractor
+import com.picpay.desafio.android.home.domain.interactors.users.request.RequestUsersInteractorImpl
 import io.reactivex.rxjava3.core.Single
 import org.junit.Before
 import org.junit.Test
@@ -13,15 +13,15 @@ import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class GetUsersInteractorTest {
+class RequestUsersInteractorTest {
 
-    private lateinit var interactor: GetUsersInteractor
+    private lateinit var interactor: RequestUsersInteractor
     private val repository: UserRepository = mock()
     private val listOfUsers: List<User> = mock()
 
     @Before
     fun setUp() {
-        interactor = GetUsersInteractorImpl(repository)
+        interactor = RequestUsersInteractorImpl(repository)
     }
 
     @Test

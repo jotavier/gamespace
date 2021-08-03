@@ -3,6 +3,7 @@ package com.picpay.desafio.android.api.webclient
 import com.google.gson.GsonBuilder
 import com.picpay.desafio.android.api.BuildConfig
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,11 +11,14 @@ import java.util.concurrent.TimeUnit
 
 internal object ApiFactory {
 
+    private val loggingInterceptor: HttpLoggingInterceptor by lazy { HttpLoggingInterceptor() }
+
     private val okHttp: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .connectTimeout(ApiResource.Connection.TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(ApiResource.Read.TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(ApiResource.Write.TIMEOUT, TimeUnit.SECONDS)
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 

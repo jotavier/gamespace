@@ -20,8 +20,8 @@ abstract class CoreModule {
         @Provides
         fun providesExecutor(): Executor =
             ExecutorImpl(
-                AndroidSchedulers.mainThread(),
-                Schedulers.io()
+                observeOn = AndroidSchedulers.mainThread(),
+                subscribeOn = Schedulers.io()
             )
     }
 

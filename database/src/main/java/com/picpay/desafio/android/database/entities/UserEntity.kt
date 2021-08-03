@@ -4,12 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(
-    tableName = "users"
-)
+@Entity(tableName = "users")
 data class UserEntity(
     @PrimaryKey
-    val id: Long,
+    val id: Long = 0,
     @ColumnInfo(name = "image")
     val img: String,
     val name: String,

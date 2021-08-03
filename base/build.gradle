@@ -68,9 +68,9 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // UI Tests
-    androidTestApi "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestApi "androidx.test:runner:$test_runner_version"
-    androidTestApi "androidx.test:core-ktx:$core_ktx_test_version"
-    androidTestApi "androidx.test:runner:$test_runner_version"
-    androidTestApi "androidx.test:core-ktx:$core_ktx_test_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
 }

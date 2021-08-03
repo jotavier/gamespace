@@ -16,10 +16,10 @@ class UserRepositoryImpl
 
     override fun requestUsers(): Single<List<User>> =
         userDataSet.getUsers()
-            .doAfterSuccess { usersDto -> userDao.saveUsers(usersDto.toEntity()) }
+            .doAfterSuccess { usersDto -> userDao.save(usersDto.toEntity()) }
             .map { usersDto -> usersDto.toDomain() }
 
     override fun getLocalUsers(): Single<List<User>> =
-        userDao.getUsers()
-            .map { usersEntities -> usersEntities?.toDomain() }
+        userDao.selectAll()
+            .map { users -> users?.toDomain() }
 }

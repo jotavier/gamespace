@@ -15,7 +15,7 @@ import com.picpay.desafio.android.home.databinding.FragmentUsersBinding
 import com.picpay.desafio.android.home.presentation.dataui.UserDataUi
 import com.picpay.desafio.android.home.presentation.ui.home.adapters.UserListAdapter
 import com.picpay.desafio.android.home.presentation.ui.home.viewmodels.UsersViewModel
-import com.picpay.desafio.android.home.presentation.ui.home.viewmodels.states.UsersRequestState
+import com.picpay.desafio.android.home.presentation.ui.home.viewmodels.viewstates.UsersViewState
 import javax.inject.Inject
 
 class UsersFragment : BaseFragment() {
@@ -26,7 +26,7 @@ class UsersFragment : BaseFragment() {
     private var _binding: FragmentUsersBinding? = null
     private val binding: FragmentUsersBinding by lazy { _binding!! }
 
-    private val userListAdapter by lazy { UserListAdapter() }
+    private val userAdapter by lazy { UserListAdapter() }
     private val usersViewModel by viewModels<UsersViewModel> { viewModelFactory }
 
     override fun onCreateView(
@@ -41,25 +41,23 @@ class UsersFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         usersViewModel.getUsers()
+        setupUsersAdapter()
         listenToUsersRequestState()
     }
 
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        savedInstanceState?.also {
-
-        }
+    private fun setupUsersAdapter() {
+        binding.users.adapter = userAdapter
     }
 
     private fun listenToUsersRequestState() {
-        usersViewModel.usersRequestState.observe(viewLifecycleOwner) { requestResult ->
+        usersViewModel.usersViewState.observe(viewLifecycleOwner) { requestResult ->
             when (requestResult) {
-                is UsersRequestState.Error -> {
+                is UsersViewState.Error -> {
                     makeToast(getString(R.string.default_request_error_message))
                     showUsersView()
                 }
-                is UsersRequestState.Loading -> showLoader()
-                is UsersRequestState.Success -> showLoadedUsers(requestResult.users)
+                is UsersViewState.Loading -> showLoader()
+                is UsersViewState.Success -> showLoadedUsers(requestResult.users)
             }
         }
     }
@@ -75,8 +73,7 @@ class UsersFragment : BaseFragment() {
     }
 
     private fun showLoadedUsers(users: List<UserDataUi>) {
-        userListAdapter.addUsers(users)
-        binding.users.adapter = userListAdapter
+        userAdapter.addUsers(users)
         showUsersView()
     }
 
