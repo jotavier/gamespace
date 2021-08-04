@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.picpay.desafio.android.base.viewmodel.BaseViewModel
 import com.picpay.desafio.android.core.abstractions.executor.Executor
-import com.picpay.desafio.android.home.domain.interactors.users.get.GetLocalUsersInteractor
-import com.picpay.desafio.android.home.domain.interactors.users.request.RequestUsersInteractor
+import com.picpay.desafio.android.home.data.Resource
+import com.picpay.desafio.android.home.domain.entities.User
+import com.picpay.desafio.android.home.domain.interactors.users.update.UpdateUsersInteractor
 import com.picpay.desafio.android.home.presentation.mappers.toPresentation
 import com.picpay.desafio.android.home.presentation.ui.home.viewmodels.viewstates.UsersViewState
 import io.reactivex.rxjava3.kotlin.subscribeBy
@@ -14,35 +15,27 @@ import javax.inject.Inject
 class UsersViewModel
 @Inject constructor(
     private val executor: Executor,
-    private val requestUsersInteractor: RequestUsersInteractor,
-    private val getLocalUsersInteractor: GetLocalUsersInteractor
+    private val updateUsersInteractor: UpdateUsersInteractor
 ) : BaseViewModel() {
 
     private val _usersRequestViewState = MutableLiveData<UsersViewState>()
     val usersViewState: LiveData<UsersViewState> get() = _usersRequestViewState
 
-
     fun getUsers() {
-        executor.execute(getLocalUsersInteractor, Unit)
+        executor.execute(updateUsersInteractor, Unit)
             .subscribeBy(
-                onSuccess = { users ->
-                    _usersRequestViewState.value = UsersViewState.Success(users.toPresentation())
-                },
-                onError = { requestUsers() }
-            )
-            .disposeOnUnsubscribe()
-    }
-
-    fun requestUsers() {
-        executor.execute(requestUsersInteractor, Unit)
-            .doOnSubscribe { _usersRequestViewState.value = UsersViewState.Loading }
-            .subscribeBy(
-                onSuccess = { users ->
-                    _usersRequestViewState.value = UsersViewState.Success(users.toPresentation())
-                },
+                onNext = ::handleUserResourceState,
                 onError = { _usersRequestViewState.value = UsersViewState.Error }
             )
             .disposeOnUnsubscribe()
     }
 
+    private fun handleUserResourceState(resource: Resource<List<User>>) {
+        when (resource) {
+            is Resource.Content -> _usersRequestViewState.value =
+                UsersViewState.Success(resource.data?.toPresentation().orEmpty())
+            is Resource.Error -> _usersRequestViewState.value = UsersViewState.Error
+            is Resource.Fetching -> _usersRequestViewState.value = UsersViewState.Loading
+        }
+    }
 }

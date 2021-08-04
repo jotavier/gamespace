@@ -1,17 +1,11 @@
 package com.picpay.desafio.android.core.abstractions.executor
 
 import com.picpay.desafio.android.core.abstractions.interactor.Interactor
-import io.reactivex.rxjava3.core.Completable
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.core.Flowable
 
 interface Executor {
     fun <INPUT, OUTPUT> execute(
-        interactor: Interactor<INPUT, Single<OUTPUT>>,
+        interactor: Interactor<INPUT, Flowable<OUTPUT>>,
         input: INPUT
-    ): Single<OUTPUT>
-
-    fun <INPUT> execute(
-        interactor: Interactor<INPUT, Completable>,
-        input: INPUT
-    ): Completable
+    ): Flowable<OUTPUT>
 }

@@ -1,9 +1,7 @@
 package com.picpay.desafio.android.home.domain.di
 
-import com.picpay.desafio.android.home.domain.interactors.users.get.GetLocalUsersInteractor
-import com.picpay.desafio.android.home.domain.interactors.users.get.GetLocalUsersInteractorImpl
-import com.picpay.desafio.android.home.domain.interactors.users.request.RequestUsersInteractor
-import com.picpay.desafio.android.home.domain.interactors.users.request.RequestUsersInteractorImpl
+import com.picpay.desafio.android.home.domain.interactors.users.update.UpdateUsersInteractor
+import com.picpay.desafio.android.home.domain.interactors.users.update.UpdateUsersInteractorImpl
 import dagger.Binds
 import dagger.Module
 
@@ -11,8 +9,5 @@ import dagger.Module
 internal abstract class InteractorModule {
 
     @Binds
-    abstract fun bindGetLocalUsersInteractor(impl: GetLocalUsersInteractorImpl): GetLocalUsersInteractor
-
-    @Binds
-    abstract fun bindRequestUsersInteractor(impl: RequestUsersInteractorImpl): RequestUsersInteractor
+    abstract fun bindUpdateUsersInteractor(impl: UpdateUsersInteractorImpl): UpdateUsersInteractor
 }
