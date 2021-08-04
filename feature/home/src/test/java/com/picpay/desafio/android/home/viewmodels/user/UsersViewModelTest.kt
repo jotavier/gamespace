@@ -38,9 +38,7 @@ class UsersViewModelTest {
     @Test
     fun `should set success state when interactor returns content`() {
         whenever(updateUsersInteractor.execute(Unit)).thenReturn(
-            Flowable.just(
-                Resource.Content(UserFactory.domains)
-            )
+            Flowable.just(Resource.Content(UserFactory.domains))
         )
         usersViewStateObserver.onChanged(UsersViewState.Success(UserFactory.domains.toPresentation()))
     }
@@ -68,5 +66,4 @@ class UsersViewModelTest {
         )
         usersViewStateObserver.onChanged(UsersViewState.Error)
     }
-
 }

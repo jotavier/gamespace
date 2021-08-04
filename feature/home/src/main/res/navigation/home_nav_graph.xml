@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_nav_graph"
-    app:startDestination="@id/mainFragment">
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/usersFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/usersFragment"
         android:name="com.picpay.desafio.android.home.presentation.ui.home.fragments.UsersFragment"
         android:label="@string/main_user_list_title"
         tools:layout="@layout/fragment_users" />
