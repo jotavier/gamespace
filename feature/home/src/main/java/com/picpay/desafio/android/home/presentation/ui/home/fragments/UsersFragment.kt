@@ -40,7 +40,7 @@ class UsersFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        usersViewModel.getUsers()
+        usersViewModel.fetchUsers()
         setupUsersAdapter()
         listenToUsersRequestState()
     }

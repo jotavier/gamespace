@@ -27,8 +27,10 @@ class UserRepositoryImpl
         if (!newUsers.isNullOrEmpty()) {
             emmiter.onNext(Resource.Content(newUsers.toDomain()))
             userDao.update(newUsers.toEntity())
+            emmiter.onComplete()
             return@create
         }
         emmiter.onNext(Resource.Content(cachedUsers?.toDomain()))
+        emmiter.onComplete()
     }, BackpressureStrategy.BUFFER)
 }

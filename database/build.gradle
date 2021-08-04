@@ -39,10 +39,11 @@ dependencies {
     implementation project(":core")
 
     api "androidx.room:room-runtime:$room_version"
-    api "androidx.room:room-rxjava3:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
     // DI
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    androidTestImplementation project(path: ":core", configuration: "unitTestDependencies")
 }

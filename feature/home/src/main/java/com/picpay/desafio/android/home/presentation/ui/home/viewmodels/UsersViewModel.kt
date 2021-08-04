@@ -21,7 +21,7 @@ class UsersViewModel
     private val _usersRequestViewState = MutableLiveData<UsersViewState>()
     val usersViewState: LiveData<UsersViewState> get() = _usersRequestViewState
 
-    fun getUsers() {
+    fun fetchUsers() {
         executor.execute(updateUsersInteractor, Unit)
             .subscribeBy(
                 onNext = ::handleUserResourceState,

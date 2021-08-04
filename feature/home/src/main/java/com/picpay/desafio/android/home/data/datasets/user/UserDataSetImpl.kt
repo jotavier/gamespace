@@ -10,6 +10,7 @@ class UserDataSetImpl
 ) : UserDataSet {
 
     override fun fetch(): List<UserDto> {
-        return userService.getUsers().body().orEmpty()
+        val users = userService.getUsers().execute()
+        return users.body().orEmpty()
     }
 }

@@ -34,6 +34,10 @@ android {
     }
 }
 
+configurations {
+    uiTestDependencies.extendsFrom androidTestImplementation
+}
+
 dependencies {
     api project(':api')
     api project(":database")
@@ -69,8 +73,14 @@ dependencies {
 
     // UI Tests
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    // Tests
+    androidTestImplementation "junit:junit:$junit_version"
+    androidTestImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$core_testing_version"
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
-    androidTestImplementation "androidx.test:runner:$test_runner_version"
-    androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
+    androidTestImplementation "androidx.test:rules:$test_runner_version"
+    androidTestImplementation "android.arch.core:core-testing:$room_version"
 }

@@ -25,6 +25,10 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        espresso {
+            initWith(buildTypes.debug)
+        }
     }
 
     compileOptions {
@@ -56,4 +60,17 @@ dependencies {
     // Dagger
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+
+    // Core Modules
+    testImplementation project(":core")
+    testImplementation project(":base")
+    testImplementation project(":database")
+    testImplementation project(':api')
+    testImplementation project(":resources")
+    testImplementation project(":navigation")
+
+    // Feature Modules
+    testImplementation project(":feature:main")
+    testImplementation project(":feature:home")
 }
