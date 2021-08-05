@@ -17,10 +17,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "DATABASE_NAME", "\"pic-pay-db\"")
-        buildConfigField("Integer", "DATABASE_VERSION", "1")
     }
 
     buildTypes {
+        debug {}
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -46,4 +46,5 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     androidTestImplementation project(path: ":core", configuration: "unitTestDependencies")
+    androidTestImplementation project(path: ":core", configuration: "instrumentationTestDependencies")
 }

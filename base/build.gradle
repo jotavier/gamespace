@@ -35,7 +35,7 @@ android {
 }
 
 configurations {
-    uiTestDependencies.extendsFrom androidTestImplementation
+    instrumentationTestDependencies.extendsFrom androidTestImplementation
 }
 
 dependencies {
@@ -82,5 +82,7 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
     androidTestImplementation "androidx.test:rules:$test_runner_version"
-    androidTestImplementation "android.arch.core:core-testing:$room_version"
+
+    // Instrumentation Test
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
 }

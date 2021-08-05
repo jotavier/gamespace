@@ -6,7 +6,7 @@ import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.picpay.desafio.android.home.R
 import com.picpay.desafio.android.home.presentation.ui.home.fragments.UsersFragment
 import junit.framework.TestCase

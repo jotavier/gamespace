@@ -48,5 +48,5 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
     testImplementation project(path: ":core", configuration: "unitTestDependencies")
-    testImplementation project(path: ":core", configuration: "uiTestDependencies")
+    testImplementation project(path: ":base", configuration: "instrumentationTestDependencies")
 }

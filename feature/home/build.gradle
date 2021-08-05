@@ -55,6 +55,6 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     testImplementation project(path: ":core", configuration: "unitTestDependencies")
-    androidTestImplementation project(path: ":base", configuration: "uiTestDependencies")
-    debugImplementation("androidx.fragment:fragment-testing:$fragment_version")
+    androidTestImplementation project(path: ":base", configuration: "instrumentationTestDependencies")
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 }
