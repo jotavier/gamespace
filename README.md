@@ -42,6 +42,7 @@ Para cada um dos problemas apresentados uma solução independente foi pensada.
 
 ## Testes Unitários
 
-    No módulo `feature:home`, onde há regras de negócio definida para o app, estão os testes unitários.
+    No módulo `feature:home`, onde há regras de negócio definidas para o app, todas as camadas foram
+    testadas de acordo com o necessário.
 
 ## Testes de Instrumentação
