@@ -46,3 +46,6 @@ Para cada um dos problemas apresentados uma solução independente foi pensada.
     testadas de acordo com o necessário.
 
 ## Testes de Instrumentação
+
+    Devido a simplicidade do fluxo, e não haver interações diretas do usuário com a aplicação, além
+    do scroll da listagem, o único teste instrumentado considerado foi o de banco de dados.

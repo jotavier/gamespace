@@ -45,9 +45,7 @@ class UsersViewModelTest {
 
     @Test
     fun `should set loading state when interactor returns fetching`() {
-        whenever(updateUsersInteractor.execute(Unit)).thenReturn(
-            Flowable.just(Resource.Fetching())
-        )
+        whenever(updateUsersInteractor.execute(Unit)).thenReturn(Flowable.just(Resource.Fetching()))
         usersViewStateObserver.onChanged(UsersViewState.Loading)
     }
 
@@ -61,9 +59,7 @@ class UsersViewModelTest {
 
     @Test
     fun `should set error state when interactor gets error`() {
-        whenever(updateUsersInteractor.execute(Unit)).thenReturn(
-            Flowable.error(Exception())
-        )
+        whenever(updateUsersInteractor.execute(Unit)).thenReturn(Flowable.error(Exception()))
         usersViewStateObserver.onChanged(UsersViewState.Error)
     }
 }
