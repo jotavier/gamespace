@@ -2,20 +2,17 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion AndroidVersions.sdk
     defaultConfig {
-        applicationId "com.picpay.desafio.android"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        vectorDrawables.useSupportLibrary = true
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId "com.knowgames"
+        minSdkVersion AndroidVersions.minSdk
+        targetSdkVersion AndroidVersions.sdk
+        versionCode AppVersion.versionCode
+        versionName AppVersion.versionName
     }
     buildTypes {
         debug {}
@@ -32,8 +29,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
@@ -42,35 +39,14 @@ android {
 }
 
 dependencies {
-
-    // Core Modules
-    implementation project(":core")
-    implementation project(":base")
-    implementation project(":database")
-    implementation project(':api')
-    implementation project(":resources")
-    implementation project(":navigation")
-
-    // Feature Modules
-    implementation project(":feature:main")
-    implementation project(":feature:home")
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Dagger
-    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
-
-
     // Core Modules
-    testImplementation project(":core")
-    testImplementation project(":base")
-    testImplementation project(":database")
-    testImplementation project(':api')
-    testImplementation project(":resources")
-    testImplementation project(":navigation")
+    implementation project(Feature.core)
+    implementation project(Feature.database)
+    implementation project(Feature.network)
 
     // Feature Modules
-    testImplementation project(":feature:main")
-    testImplementation project(":feature:home")
+    implementation project(Feature.main)
+    implementation project(Feature.home)
 }

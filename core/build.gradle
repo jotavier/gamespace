@@ -5,17 +5,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion AndroidVersions.sdk
+    buildToolsVersion AndroidVersions.buildTools
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion AndroidVersions.minSdk
+        targetSdkVersion AndroidVersions.sdk
     }
 
     buildTypes {
@@ -29,7 +24,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -39,35 +34,16 @@ configurations {
 }
 
 dependencies {
-    api project(":resources")
 
-    // Android Defaults
-    api "androidx.appcompat:appcompat:$appcompat_version"
-    api "androidx.core:core-ktx:$core_ktx_version"
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api Dependencies.appCompat
+    api Dependencies.coreKtx
+    api Dependencies.ktStdLib
+    api Dependencies.coroutines
+    api Dependencies.gson
 
-    // DI
-    api "com.google.dagger:dagger-android:$dagger_version"
-    api "com.google.dagger:dagger-android-support:$dagger_version"
-    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation Dependencies.koin
+    implementation Dependencies.koinViewModel
 
-    // Rx
-    api "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
-    api "io.reactivex.rxjava3:rxkotlin:$rxkotlin_version"
-
-    // Services
-    api "com.google.code.gson:gson:$gson_version"
-
-    // Tests
-    testImplementation "junit:junit:$junit_version"
-    testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
-    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
-    testImplementation "androidx.test:runner:$test_runner_version"
-    testImplementation "androidx.test:core-ktx:$core_ktx_test_version"
-    testImplementation "androidx.test:rules:$test_runner_version"
-
-    // Instrumentation Test
-    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
+    testImplementation TestDependencies.junit
+    testImplementation TestDependencies.mockk
 }

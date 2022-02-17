@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.picpay.desafio.android.home">
+    package="com.picpay.desafio.knowgames.home">
 
     <application android:theme="@style/AppTheme">
-        <activity android:name="com.picpay.desafio.android.home.presentation.ui.home.HomeActivity">
+        <activity android:name="com.picpay.desafio.com.knowgames.home.presentation.ui.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -3,20 +3,16 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
-apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion AndroidVersions.sdk
+    buildToolsVersion AndroidVersions.buildTools
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion AndroidVersions.minSdk
+        targetSdkVersion AndroidVersions.sdk
 
-        buildConfigField("String", "DATABASE_NAME", "\"pic-pay-db\"")
+        buildConfigField("String", "DATABASE_NAME", "\"know-games-db\"")
     }
 
     buildTypes {
@@ -36,15 +32,8 @@ android {
 }
 
 dependencies {
-    implementation project(":core")
+    implementation project(Feature.core)
 
-    api "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-
-    // DI
-    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
-
-    androidTestImplementation project(path: ":core", configuration: "unitTestDependencies")
-    androidTestImplementation project(path: ":core", configuration: "instrumentationTestDependencies")
+    api Dependencies.roomRuntime
+    kapt Dependencies.roomCompile
 }

@@ -6,16 +6,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion AndroidVersions.sdk
+    buildToolsVersion AndroidVersions.buildTools
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion AndroidVersions.minSdk
+        targetSdkVersion AndroidVersions.sdk
     }
 
     buildTypes {
@@ -45,16 +41,10 @@ android {
 }
 
 dependencies {
-    implementation project(":core")
-    implementation project(":base")
+    implementation project(Feature.home)
 
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
-    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation Dependencies.navFragment
+    implementation Dependencies.navUi
 
     testImplementation project(path: ":core", configuration: "unitTestDependencies")
-    androidTestImplementation project(path: ":base", configuration: "instrumentationTestDependencies")
-    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 }
