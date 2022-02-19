@@ -1,6 +1,5 @@
 object Dependencies {
     const val koin = "io.insert-koin:koin-android:${Versions.koin}"
-    const val koinViewModel = "io.insert-koin:koin-android-viewmodel:${Versions.koin}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val ktStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
@@ -14,11 +13,16 @@ object Dependencies {
     const val roomCompile = "androidx.room:room-compiler:${Versions.room}"
     const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
 }
-
 
 object TestDependencies {
     const val junit = "junit:junit:${Versions.junit}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
+    const val junitExt = "androidx.test.ext:junit-ktx:${Versions.junitExt}"
 }
 
+object TestDependenciesConfiguration {
+    const val unitTest = "unitTestDependencies"
+    const val androidTest = "instrumentationTestDependencies"
+}

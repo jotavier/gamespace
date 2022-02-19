@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainFragmentContainer"
     android:background="@color/colorPrimaryDark"
-    android:name="com.knowgames.main.presentation.ui.main.fragments.MainFragment"
+    android:name="com.gamespace.main.presentation.ui.main.fragments.MainFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:layout="@layout/fragment_main" />

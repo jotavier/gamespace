@@ -14,14 +14,9 @@ android {
     }
 
     buildTypes {
-        debug {}
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        espresso {
-            initWith(buildTypes.debug)
-        }
+        debug { minifyEnabled false }
+        release { minifyEnabled true }
+        espresso { initWith(buildTypes.debug) }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,5 +33,7 @@ android {
 dependencies {
     implementation project(Feature.core)
 
-    testImplementation project(path: ":core", configuration: "unitTestDependencies")
+    implementation Dependencies.lottie
+
+    testImplementation project(path: Feature.core, configuration: TestDependenciesConfiguration.unitTest)
 }

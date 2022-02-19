@@ -15,14 +15,9 @@ android {
     }
 
     buildTypes {
-        debug {}
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        espresso {
-            initWith(buildTypes.debug)
-        }
+        debug { minifyEnabled false }
+        release { minifyEnabled true }
+        espresso { initWith(buildTypes.debug) }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -31,20 +26,16 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
     buildFeatures {
         viewBinding true
-    }
-    testOptions {
-        unitTests.returnDefaultValues = true
     }
 }
 
 dependencies {
-    implementation project(Feature.home)
+    implementation project(Feature.core)
 
     implementation Dependencies.navFragment
     implementation Dependencies.navUi
 
-    testImplementation project(path: ":core", configuration: "unitTestDependencies")
+    testImplementation project(path: Feature.core, configuration: TestDependenciesConfiguration.unitTest)
 }

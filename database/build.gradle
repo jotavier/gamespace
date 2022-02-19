@@ -16,11 +16,8 @@ android {
     }
 
     buildTypes {
-        debug {}
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+        debug { minifyEnabled false }
+        release { minifyEnabled true }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -36,4 +33,7 @@ dependencies {
 
     api Dependencies.roomRuntime
     kapt Dependencies.roomCompile
+
+    testImplementation project(path: Feature.core, configuration: TestDependenciesConfiguration.unitTest)
+    androidTestImplementation project(path: Feature.core, configuration: TestDependenciesConfiguration.androidTest)
 }

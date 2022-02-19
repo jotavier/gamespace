@@ -8,14 +8,17 @@ plugins {
 android {
     compileSdkVersion AndroidVersions.sdk
     defaultConfig {
-        applicationId "com.knowgames"
+        applicationId "com.gamespace"
         minSdkVersion AndroidVersions.minSdk
         targetSdkVersion AndroidVersions.sdk
         versionCode AppVersion.versionCode
         versionName AppVersion.versionName
     }
     buildTypes {
-        debug {}
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
 
         release {
             minifyEnabled true
@@ -45,6 +48,7 @@ dependencies {
     implementation project(Feature.core)
     implementation project(Feature.database)
     implementation project(Feature.network)
+    implementation project(Feature.navigation)
 
     // Feature Modules
     implementation project(Feature.main)

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.picpay.desafio.knowgames">
+    package="com.gamespace">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.gamespace.application.gamespaceApplication"
         android:allowBackup="true"
+        android:icon="@drawable/ic_game_space"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute" />
 
 </manifest>
