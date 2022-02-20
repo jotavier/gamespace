@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="home_adapter_game_item_card_height">180dp</dimen>
+</resources>

@@ -40,10 +40,13 @@ dependencies {
     api Dependencies.coreKtx
     api Dependencies.ktStdLib
     api Dependencies.coroutines
-    api Dependencies.gson
     api Dependencies.koin
 
     api project(Feature.navigation)
+    api project(Feature.galaxy)
+
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
 
     testImplementation TestDependencies.junit
     testImplementation TestDependencies.mockk

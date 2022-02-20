@@ -14,6 +14,9 @@ object Dependencies {
     const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    const val shimmer = "com.facebook.shimmer:shimmer:${Versions.shimmer}"
 }
 
 object TestDependencies {

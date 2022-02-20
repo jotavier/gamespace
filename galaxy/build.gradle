@@ -11,8 +11,6 @@ android {
     defaultConfig {
         minSdkVersion AndroidVersions.minSdk
         targetSdkVersion AndroidVersions.sdk
-
-        buildConfigField("String", "BASE_URL", "\"https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/\"")
     }
 
     buildTypes {
@@ -26,15 +24,7 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-}
-
-dependencies {
-    implementation project(Feature.core)
-
-    api Dependencies.retrofit
-    
-    implementation Dependencies.gsonConverter
-    implementation Dependencies.gson
-    implementation Dependencies.okHttp
-    implementation Dependencies.loggingInterceptor
+    buildFeatures {
+        viewBinding true
+    }
 }

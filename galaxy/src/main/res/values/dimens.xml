@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="glx_spacing_00" type="integer">0dp</dimen>
+    <dimen name="glx_spacing_01" type="integer">1dp</dimen>
+    <dimen name="glx_spacing_02" type="integer">2dp</dimen>
+    <dimen name="glx_spacing_03" type="integer">4dp</dimen>
+    <dimen name="glx_spacing_04" type="integer">8dp</dimen>
+</resources>

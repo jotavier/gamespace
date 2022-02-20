@@ -4,9 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class UserDataUi(
+data class GameDataUi(
     val id: Long,
-    val img: String,
+    val coverUrl: String,
     val name: String,
-    val userName: String
 ) : Parcelable

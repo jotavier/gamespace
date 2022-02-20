@@ -20,5 +20,6 @@ object Versions {
     const val room = "2.4.1"
     const val navigation = "2.4.1"
     const val lottie = "4.2.2"
-
+    const val glide = "4.13.0"
+    const val shimmer = "0.5.0"
 }

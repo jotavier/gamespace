@@ -3,6 +3,7 @@ object Feature {
     const val network = ":network"
     const val database = ":database"
     const val navigation = ":navigation"
+    const val galaxy = ":galaxy"
     const val home = ":feature:home"
     const val main = ":feature:main"
 }

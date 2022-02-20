@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import com.gamespace.main.R
 import com.gamespace.main.databinding.FragmentMainBinding
 import com.gamespace.main.presentation.extensions.onAnimationEnd
-import com.gamespace.navigation.home.HomeNavigator
+import com.gamespace.navigation.AppNavigator
 import org.koin.android.ext.android.inject
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
-    private val homeNav: HomeNavigator by inject()
+    private val appNav: AppNavigator by inject()
     private var _binding: FragmentMainBinding? = null
     private val binding by lazy { _binding!! }
 
@@ -32,6 +32,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun setupOnAnimationEnd() {
-        binding.animationView.onAnimationEnd { homeNav.start(context) }
+        binding.animationView.onAnimationEnd { appNav.home(context) }
     }
 }

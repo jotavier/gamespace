@@ -36,6 +36,7 @@ dependencies {
 
     implementation Dependencies.navFragment
     implementation Dependencies.navUi
+    implementation Dependencies.shimmer
 
     testImplementation project(path: Feature.core, configuration: TestDependenciesConfiguration.unitTest)
 }
