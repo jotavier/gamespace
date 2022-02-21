@@ -47,6 +47,7 @@ dependencies {
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
+    implementation Dependencies.shimmer
 
     testImplementation TestDependencies.junit
     testImplementation TestDependencies.mockk

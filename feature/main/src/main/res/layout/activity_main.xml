@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainFragmentContainer"
-    android:background="@color/colorPrimaryDark"
-    android:name="com.gamespace.main.presentation.ui.main.fragments.MainFragment"
+<com.airbnb.lottie.LottieAnimationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/animationView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout="@layout/fragment_main" />
+    app:lottie_autoPlay="true"
+    app:lottie_rawRes="@raw/lottie_splash_screen" />

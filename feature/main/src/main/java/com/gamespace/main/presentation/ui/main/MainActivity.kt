@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.gamespace.main.R
 import com.gamespace.main.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+internal class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
