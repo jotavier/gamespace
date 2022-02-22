@@ -9,9 +9,9 @@ import com.picpay.desafio.gamespace.core.extensions.EMPTY
 import com.gamespace.home.data.Resource
 import com.gamespace.home.domain.interactors.users.update.UpdateUsersInteractor
 import com.gamespace.home.factories.UserFactory
-import com.gamespace.home.presentation.mappers.toPresentation
-import com.gamespace.home.presentation.ui.home.viewmodels.UsersViewModel
-import com.gamespace.home.presentation.ui.home.viewmodels.viewstates.UsersViewState
+import com.gamespace.home.presentation.mapper.toPresentation
+import com.gamespace.home.presentation.ui.feed.viewmodel.UsersViewModel
+import com.gamespace.home.presentation.ui.feed.viewmodel.viewstates.UsersViewState
 import io.reactivex.rxjava3.core.Flowable
 import org.junit.Before
 import org.junit.Rule

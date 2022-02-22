@@ -33,6 +33,7 @@ android {
 
 dependencies {
     implementation project(Feature.core)
+    implementation project(Feature.common)
 
     implementation Dependencies.navFragment
     implementation Dependencies.navUi

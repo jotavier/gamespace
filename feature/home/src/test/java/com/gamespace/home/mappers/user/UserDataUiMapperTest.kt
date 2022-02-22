@@ -1,7 +1,6 @@
 package com.gamespace.home.mappers.user
 
 import com.gamespace.home.factories.UserFactory
-import com.gamespace.home.presentation.mappers.toPresentation
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -30,7 +30,11 @@ android {
 }
 
 dependencies {
+    
+    implementation Dependencies.koin
 
+    implementation project(Feature.common)
     implementation project(Feature.home)
     implementation project(Feature.main)
+
 }

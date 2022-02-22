@@ -14,4 +14,12 @@ abstract class ViewModel<STATE : UIState, ACTION : UIAction>
 
     private var _state: MutableStateFlow<STATE> = MutableStateFlow(state)
     val state: StateFlow<STATE> get() = _state
+
+    fun sendAction(actionBlock: () -> ACTION) {
+        _action = MutableStateFlow(actionBlock())
+    }
+
+    fun setState(stateBlock: (STATE) -> STATE) {
+        _state = MutableStateFlow(stateBlock(state.value))
+    }
 }

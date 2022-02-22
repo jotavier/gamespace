@@ -4,16 +4,16 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 abstract class FeatureModule {
-    open val presentationModule: Module = module { }
-    open val dataModule: Module = module { }
-    open val domainModule: Module = module { }
-    open val additionalModule: Module = module { }
+    open val presentationModule: LayerModule = LayerModule { module {} }
+    open val dataModule: LayerModule = LayerModule { module {} }
+    open val domainModule: LayerModule = LayerModule { module {} }
+    open val additionalModule: LayerModule = LayerModule { module {} }
 
     fun get(): List<Module> =
         listOf(
-            presentationModule,
-            dataModule,
-            domainModule,
-            additionalModule
+            presentationModule.get(),
+            dataModule.get(),
+            domainModule.get(),
+            additionalModule.get()
         )
 }

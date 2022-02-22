@@ -9,8 +9,7 @@ import org.koin.dsl.module
 
 internal class DaoModule : LayerModule {
 
-    override val module: Module
-        get() = module {
-            single<UserDao> { get<GameSpaceDatabase>().userDao() }
-        }
+    override fun get(): Module = module {
+        single<UserDao> { get<GameSpaceDatabase>().userDao() }
+    }
 }
