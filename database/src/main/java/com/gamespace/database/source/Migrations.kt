@@ -2,7 +2,7 @@ package com.gamespace.database.source
 
 import androidx.room.migration.Migration
 
-object Migrations {
+internal object Migrations {
     object Database {
         const val VERSION: Int = 1
     }

@@ -29,7 +29,3 @@ android {
         viewBinding false
     }
 }
-
-dependencies {
-    implementation project(Feature.core)
-}

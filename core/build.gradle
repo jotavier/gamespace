@@ -42,9 +42,6 @@ dependencies {
     api Dependencies.coroutines
     api Dependencies.koin
 
-    api project(Feature.navigation)
-    api project(Feature.galaxy)
-
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
     implementation Dependencies.shimmer

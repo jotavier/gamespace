@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-internal object NetworkFactory {
+internal object NetworkProvider {
 
     private val loggingInterceptor: HttpLoggingInterceptor by lazy {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
