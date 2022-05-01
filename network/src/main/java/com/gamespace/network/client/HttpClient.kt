@@ -3,5 +3,5 @@ package com.gamespace.network.client
 import kotlin.reflect.KClass
 
 interface HttpClient {
-    fun create(serviceClass: KClass<*>): Any
+    fun <SERVICE, T : KClass<SERVICE>> create(serviceClass: T): SERVICE
 }

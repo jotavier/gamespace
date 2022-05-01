@@ -1,4 +1,4 @@
-package com.gamespace.main.presentation.ui.splash.viewmodel.action
+package com.gamespace.main.presentation.splash.viewmodel.action
 
 import com.gamespace.common.presentation.dataui.GameDataUi
 import com.gamespace.core.viewmodel.action.UIAction

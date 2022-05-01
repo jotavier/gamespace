@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Gray  -->
+    <color name="glx_gray_50">#FBFBFB</color>
+    <color name="glx_gray_200">#F1F1F1</color>
+    <color name="glx_gray_400">#C2C2C2</color>
+    <color name="glx_gray_500">#A4A4A4</color>
+    <color name="glx_gray_900">#252525</color>
+</resources>

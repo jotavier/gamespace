@@ -9,5 +9,5 @@
         android:id="@+id/usersFragment"
         android:name="com.gamespace.home.presentation.ui.feed.FeedFragment"
         android:label="@string/main_user_list_title"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/home_fragment_feed" />
 </navigation>

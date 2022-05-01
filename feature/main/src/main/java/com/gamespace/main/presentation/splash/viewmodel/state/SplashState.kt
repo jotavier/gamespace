@@ -1,4 +1,4 @@
-package com.gamespace.main.presentation.ui.splash.viewmodel.state
+package com.gamespace.main.presentation.splash.viewmodel.state
 
 import com.gamespace.core.viewmodel.state.UIState
 

@@ -6,25 +6,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion AndroidVersions.sdk
-    buildToolsVersion AndroidVersions.buildTools
-
     defaultConfig {
-        minSdkVersion AndroidVersions.minSdk
-        targetSdkVersion AndroidVersions.sdk
-    }
-
-    buildTypes {
-        debug { minifyEnabled false }
-        release { minifyEnabled true }
-        espresso { initWith(buildTypes.debug) }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        resourcePrefix = "home"
     }
     buildFeatures {
         viewBinding true

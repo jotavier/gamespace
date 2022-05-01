@@ -5,24 +5,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion AndroidVersions.sdk
-    buildToolsVersion AndroidVersions.buildTools
-
     defaultConfig {
-        minSdkVersion AndroidVersions.minSdk
-        targetSdkVersion AndroidVersions.sdk
-    }
-
-    buildTypes {
-        debug { minifyEnabled false }
-        release { minifyEnabled true }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        resourcePrefix = "glx"
     }
     buildFeatures {
         viewBinding true

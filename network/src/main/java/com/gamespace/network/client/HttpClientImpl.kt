@@ -4,6 +4,7 @@ import com.gamespace.network.factory.NetworkProvider
 import kotlin.reflect.KClass
 
 internal class HttpClientImpl : HttpClient {
-    override fun create(serviceClass: KClass<*>): Any =
+
+    override fun <SERVICE, T : KClass<SERVICE>> create(serviceClass: T): SERVICE =
         NetworkProvider.apiServiceGenerator.create(serviceClass.java)
 }

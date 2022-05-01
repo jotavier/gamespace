@@ -8,7 +8,7 @@ plugins {
 android {
     compileSdkVersion AndroidVersions.sdk
     defaultConfig {
-        applicationId "com.gamespace"
+        applicationId GameSpace.id
         minSdkVersion AndroidVersions.minSdk
         targetSdkVersion AndroidVersions.sdk
         versionCode AppVersion.versionCode

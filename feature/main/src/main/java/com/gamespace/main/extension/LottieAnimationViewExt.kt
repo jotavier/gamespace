@@ -1,4 +1,4 @@
-package com.gamespace.main.presentation.extension
+package com.gamespace.main.extension
 
 import android.animation.Animator
 import com.airbnb.lottie.LottieAnimationView

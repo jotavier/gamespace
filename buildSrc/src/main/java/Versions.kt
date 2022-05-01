@@ -1,7 +1,6 @@
 object Versions {
     const val koin = "3.1.5"
-    const val kotlin = "1.6.10"
-    const val gradle = "7.1.1"
+    const val kotlin = "1.6.21"
     const val appCompat = "1.3.1"
     const val coreKtx = "1.6.0"
     const val constraintLayout = "2.1.0"

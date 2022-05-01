@@ -12,6 +12,6 @@
 
     <include
         android:id="@+id/loadingCover"
-        layout="@layout/adapter_loading_game_item" />
+        layout="@layout/home_adapter_game_item_loading" />
 
 </androidx.cardview.widget.CardView>
